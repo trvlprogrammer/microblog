@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-20 10:18+0700\n"
+"POT-Creation-Date: 2022-06-20 13:41+0700\n"
 "PO-Revision-Date: 2022-06-20 10:06+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: id_ID\n"
@@ -38,7 +38,7 @@ msgstr "Kata Sandi"
 msgid "Remember Me"
 msgstr "Ingat Saya"
 
-#: app/forms.py:14 app/routes.py:74 app/templates/login.html:5
+#: app/forms.py:14 app/routes.py:80 app/templates/login.html:5
 msgid "Sign In"
 msgstr "Masuk"
 
@@ -50,7 +50,7 @@ msgstr "Email"
 msgid "Repeat Password"
 msgstr "Ulangi Kata Sandi"
 
-#: app/forms.py:24 app/routes.py:95 app/templates/register.html:5
+#: app/forms.py:24 app/routes.py:101 app/templates/register.html:5
 msgid "Register"
 msgstr "Daftar"
 
@@ -78,68 +78,76 @@ msgstr "Kirim"
 msgid "Say something"
 msgstr "Katakan Sesuatu"
 
-#: app/routes.py:30
+#: app/routes.py:36
 msgid "Your post is now live!"
 msgstr "Post kamu sekarang sudah megudara"
 
-#: app/routes.py:39 app/templates/base.html:21
+#: app/routes.py:45 app/templates/base.html:21
 msgid "Home"
 msgstr "Beranda"
 
-#: app/routes.py:54 app/templates/base.html:22
+#: app/routes.py:60 app/templates/base.html:22
 msgid "Explore"
 msgstr "Eksplorasi"
 
-#: app/routes.py:67
+#: app/routes.py:73
 msgid "Invalid username or password"
 msgstr "Nama pengguna atau kata sandi tidak valid"
 
-#: app/routes.py:93
+#: app/routes.py:99
 msgid "Congratulations, you are now a registered user!"
 msgstr "Selamat, Kamu terdaftar!"
 
-#: app/routes.py:108
+#: app/routes.py:114
 msgid "Check your email for the instructions to reset your password"
 msgstr "Periksa email kamu untuk instruksi ganti kata sandi"
 
-#: app/routes.py:111 app/templates/reset_password_request.html:5
+#: app/routes.py:117 app/templates/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "Ganti sandi"
 
-#: app/routes.py:125
+#: app/routes.py:131
 msgid "Your password has been reset."
 msgstr "Kata sandi kamu sudah direset"
 
-#: app/routes.py:154
+#: app/routes.py:160
 msgid "Your changes have been saved."
 msgstr "Perubahan kamu sudah tersimpan"
 
-#: app/routes.py:159 app/templates/edit_profile.html:5
+#: app/routes.py:165 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "Rubah profil"
 
-#: app/routes.py:170 app/routes.py:190
+#: app/routes.py:176 app/routes.py:196
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Pengguna %(username)s tidak ditemukan"
 
-#: app/routes.py:173
+#: app/routes.py:179
 msgid "You cannot follow yourself!"
 msgstr "Kamu tidak bisa mengikuti diri sendiri"
 
-#: app/routes.py:177
+#: app/routes.py:183
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Kamu mengikuti %(username)s!"
 
-#: app/routes.py:193
+#: app/routes.py:199
 msgid "You cannot unfollow yourself!"
 msgstr "Kamu tidak bisa berhenti mengikuti diri sendiri"
 
-#: app/routes.py:197
+#: app/routes.py:203
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "kamu tidak mengikuti %(username)s."
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr ""
 
 #: app/templates/404.html:4
 msgid "Not Found"
@@ -162,6 +170,10 @@ msgstr "Mimin sudah diveritahu, maaf ya"
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s bilang %(when)s"
 
+#: app/templates/_post.html:25
+msgid "Translate"
+msgstr ""
+
 #: app/templates/base.html:4
 msgid "Welcome to Microblog"
 msgstr "Selamat Datang di Microblog"
@@ -177,6 +189,10 @@ msgstr "Profil"
 #: app/templates/base.html:29
 msgid "Logout"
 msgstr "Keluar"
+
+#: app/templates/base.html:66
+msgid "Error: Could not contact server."
+msgstr ""
 
 #: app/templates/index.html:5
 #, python-format
