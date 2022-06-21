@@ -1,0 +1,87 @@
+2022-06-21 13:22:11,344 ERROR: Exception on /index [GET] [in D:\work\research\microblog\env\lib\site-packages\flask\app.py:1455]
+Traceback (most recent call last):
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\work\research\microblog\env\lib\site-packages\flask_login\utils.py", line 303, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "D:\work\research\microblog\microblog\app\main\routes.py", line 40, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+NameError: name 'app' is not defined
+2022-06-21 13:23:03,792 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:23:07,363 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:23:19,313 ERROR: Exception on /user/test/asdlj [GET] [in D:\work\research\microblog\env\lib\site-packages\flask\app.py:1455]
+Traceback (most recent call last):
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1481, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "D:\work\research\microblog\env\lib\site-packages\flask\ctx.py", line 397, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "D:\work\research\microblog\env\lib\site-packages\werkzeug\routing.py", line 2047, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1384, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "D:\work\research\microblog\env\lib\site-packages\flask\app.py", line 1324, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "D:\work\research\microblog\microblog\app\errors\handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "D:\work\research\microblog\env\lib\site-packages\flask\templating.py", line 148, in render_template
+    return _render(
+  File "D:\work\research\microblog\env\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "D:\work\research\microblog\env\lib\site-packages\jinja2\environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "D:\work\research\microblog\env\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\work\research\microblog\microblog\app\templates\errors\404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\work\research\microblog\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "D:\work\research\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "D:\work\research\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "D:\work\research\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "D:\work\research\microblog\env\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "D:\work\research\microblog\microblog\app\templates\base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "D:\work\research\microblog\microblog\app\templates\errors\404.html", line 5, in block 'app_content'
+    <p><a href="{{ url_for('index') }}">{{ _('Back') }}</a></p>
+  File "D:\work\research\microblog\env\lib\site-packages\flask\helpers.py", line 336, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "D:\work\research\microblog\env\lib\site-packages\flask\helpers.py", line 323, in url_for
+    rv = url_adapter.build(
+  File "D:\work\research\microblog\env\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2022-06-21 13:24:33,733 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,739 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,759 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,759 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,803 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,803 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,803 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,843 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,843 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,843 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:41:57,843 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
+2022-06-21 13:42:09,572 INFO: Microblog startup [in D:\work\research\microblog\microblog\app\__init__.py:75]
