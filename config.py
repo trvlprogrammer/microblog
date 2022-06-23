@@ -17,7 +17,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = os.environ.get('ADMINS')
-    LANGUAGES = os.environ.get('LANGUAGES')
+    LANGUAGES = ['en', 'in']
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     POSTS_PER_PAGE = int(os.environ.get('POSTS_PER_PAGE'))
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
